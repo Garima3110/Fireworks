@@ -1,7 +1,4 @@
-# Three.js 
-
 ## Setup
-Download [Node.js](https://nodejs.org/en/download/).
 Run the following commands:
 
 ``` bash
