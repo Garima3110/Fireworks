@@ -95,7 +95,7 @@ const sun = new THREE.Vector3();
 const effectController = {
     turbidity: 20,
     rayleigh: 3,
-    mieCoefficient: 0.005,
+    mieCoefficient: 0.021,
     mieDirectionalG: 1.0,
     elevation: 0,
     azimuth: 180,
@@ -191,16 +191,17 @@ const createFireWork = (count, position, size, texture, radius,color) => {
 
     // Points
     const firework = new THREE.Points(geometry, material);
+    firework.position.copy(position);
     scene.add(firework);
 };
 const createRandomFirework=()=>{
-    const count=Math.round(400+Math.random()*1000);
-    const position=new THREE.Vector3((Math.random()-0.5)*2,Math.random(),(Math.random()-0.5)*2);
-    const size=0.1+Math.random()*0.1;
+    const count=Math.round(400+Math.random()*2000);
+    const position=new THREE.Vector3((Math.random()-0.5)*3,Math.random(),(Math.random()-0.5)*2);
+    const size=0.2+Math.random()*0.1;
     const texture=textures[Math.floor(Math.random()*textures.length)];
-    const radius=0.5+Math.random();
+    const radius=0.6+Math.random();
     const color=new THREE.Color();
-    color.setHSL(Math.random(),1,0.7); //Hue, saturation,value channel
+    color.setHSL(Math.random(),1,0.8); //Hue, saturation,value channel
     createFireWork(count,position,size,texture,radius,color);
 };
 
